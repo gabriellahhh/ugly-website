@@ -1,0 +1,335 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: subpixel-antialiased; /*If you don't have this, add it in! */
+  overflow-x: hidden;
+}
+
+/*everything below this line*/
+
+/*******
+Popup
+********/
+
+@keyframes hop-down {
+  0% {
+    transform: scale(.1) translateY(200px);
+  }
+
+
+  100% {
+    transform: scale(1) translateY(0px;);
+  }
+
+}
+
+.pop-up-layer {
+  opacity: 0%;
+  display: none; /*we will change this with javascript*/
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background: rgba(44, 62, 80,.6); /*this is our overlay color*/
+  z-index: 100; /*makes our layer above the rest of the page.*/
+}
+
+.pop-up {
+  position: fixed; /*this makes our pop-up attached to the screen*/
+  top: 0; left: 0; right: 0; bottom: 0;
+  margin: auto; /*aligns our popup to the center*/
+  height: 15rem;
+  width: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #2c3e50;
+  border-radius: 16px;
+  box-shadow: 0 4px 3px rgba(0,0,0,.3);
+  z-index: 10000000; /*Makes our pop-up above everything*/
+  animation: hop-down;
+  animation-duration: 100ms;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+}
+.pop-up-title {
+  position: absolute;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  top: 0;
+  left: 0;
+  background: white;
+  margin-top: 0;
+  width: 100%;
+  text-align: center;
+  color: black;
+  font-weight: 300;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  font-family: roboto;
+}
+
+.pop-up-sub {
+  padding-top: 1rem;
+  text-align: center;
+  color: white;
+  font-weight: 300;
+  font-family: roboto;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0;        /* we put this button at */
+  right: 0rem;    /* the top right */
+  margin-top: 0rem;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  font-size: 20px;
+  transition: all 200ms;
+  cursor: pointer;
+  border-top-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+  padding-left: 12px;
+  padding-bottom: 8px;
+  padding-top: 5px;
+  padding-right: 9px;
+}
+
+.close-btn:hover {
+  background: #c0392b;
+}
+/***********
+NAVBAR
+***********/
+
+.nav-bar {
+  z-index: 10;
+  width: 100%;
+  box-shadow: 0px 0px 1px rgba(0,0,0,.3);
+}
+.navbar {
+  z-index: 10;
+  width: 100%;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  background: white;
+}
+
+}
+.nav-btn {
+  text-decoration: none;
+  list-style-type: none;
+  color: black;
+  margin-left: 2rem;
+  transition: all 200ms;
+}
+
+.nav-btn:hover {
+  transform: scale(1.1);
+}
+.nav-btn.logo {
+  transition: all 300ms;
+}
+
+.nav-btn.logo:hover {
+  transform: scale(1.1) rotate(5deg) translateX(10px);
+}
+
+.nav-btn.right {
+  margin-left: 80%; /*made this smaller*/
+  transition: all 300ms;
+}
+
+.nav-links {
+  height: 50px;
+  width: 100%;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: roboto; /*made font-family roboto*/
+}
+.nav-btn.right:hover {
+  transform: scale(1.1) rotate(3deg);
+}
+body {
+  margin: 0;
+  -webkit-font-smoothing: subpixel-antialiased; /*If you don't have this, add it in! */
+  overflow-x: hidden;
+}
+/*******************
+gallery
+*******************/
+
+
+.gallery-sec {
+  /*padding: .3rem;*/
+  margin-right: .3rem;
+  height: 130vh;
+  background: #ecf0f1;
+  height: 130vh;
+  width: 100%;
+  padding: 3px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.gallery {
+  height: 100%;
+  width: 90%;
+  /*overflow-x: hidden;*/
+  display: grid;
+  grid-gap: 10px;
+  perspective: 800px;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gallery {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: minmax(150px, auto);
+}
+.panel {
+  /* needed for the flex layout*/
+  margin-left: 5px;
+  margin-right: 5px;
+  flex: 1 1 200px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  box-shadow: 1px 2px 6px rgba(0,0,0,.3);
+  transition: all 300ms;
+  transform-style: preserve-3d;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.tall-panel {
+  grid-row-end: span 2;
+}
+
+.g-header
+ {
+  margin-left: 5px;
+  margin-right: 5px;
+  flex: 0 1 100%;
+  grid-column: 1 / -1;
+}
+
+.gallery > * {
+  background-color: #fff;
+  color: #000;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+  margin-bottom: 10px;
+}
+
+.g-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('https://images.unsplash.com/flagged/photo-1577474810448-82eb81a48d13?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.a {
+  background: url('https://images.unsplash.com/photo-1582590911157-f01a6891e3a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60');
+  background-size: cover;
+}
+
+.b {
+  background: url('https://images.unsplash.com/photo-1575181740675-9930b98b412c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60');
+  background-size: cover;
+}
+
+.c {
+  background: url('https://images.pexels.com/photos/421160/pexels-photo-421160.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-position: -70px;
+}
+
+.d {
+  background: url('https://images.unsplash.com/photo-1561999641-128973db33d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60');
+  background-size: cover;
+}
+
+.e {
+  background: url('https://images.unsplash.com/photo-1542060748-10c28b62716f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60');
+  background-size: cover;
+}
+
+.f {
+  background: url('https://images.unsplash.com/photo-1470859685138-71dd60ed39b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: -40px;
+}
+
+
+.g {
+  background: url('https://images.pexels.com/photos/373964/pexels-photo-373964.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-position: -100px;
+  background-size: cover;
+}
+
+.h {
+  background: url('https://images.pexels.com/photos/247203/pexels-photo-247203.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-size: cover;
+}
+
+.i {
+  background: url('https://images.unsplash.com/photo-1546199881-3454b82b832b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60');
+  background-size: cover;
+}
+
+.j {
+  background: url('https://images.unsplash.com/photo-1496801623199-7935eedf5c28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60');
+  background-position: 0px -60px;
+}
+
+.panel div {
+  background: rgba(0,0,0,.3);
+  padding: 5px;
+  color: white;
+}
+
+/* We need to set the margin used on flex items to 0 as we have gaps in grid.  */
+
+@supports (display: grid) {
+  .gallery > * {
+    margin: 0;
+  }
+}
+.panel {
+  /* needed for the flex layout*/
+  margin-left: 5px;
+  margin-right: 5px;
+  flex: 1 1 200px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  box-shadow: 1px 2px 6px rgba(0,0,0,.3);
+  transition: all 300ms;
+  transform-style: preserve-3d;
+}
+.panel:hover {
+  transform: scale(1.01) translateY(-5px) rotateX(10deg) rotateY(2deg) skewY(4deg);
+  box-shadow: 1px 4px 9px rgba(0,0,0,.5);
+  z-index: 3;
+}
